@@ -9,6 +9,7 @@ type User = {
   photoUrl: string;
   about: string;
   skills: string[];
+  age?: number; 
 };
 
 const connectionSlice = createSlice({

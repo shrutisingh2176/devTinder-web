@@ -42,7 +42,7 @@ const Connections = () => {
 
 
         return (
-        <div className="m-4 p-4 bg-base-300 rounded-lg shadow-md flex items-center gap-4 w-1/2 mx-auto" >
+        <div key={_id} className="m-4 p-4 bg-base-300 rounded-lg shadow-md flex items-center gap-4 w-1/2 mx-auto" >
             <div>
                  <img
                 alt="photo"
