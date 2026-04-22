@@ -2,7 +2,7 @@
 
 const UserCard = ({ user }:any) => {
     const { _id, firstName, lastName, photoUrl, age, gender, about } = user;
-    console.log("user in card", user);
+  
   return (
     <div className="card bg-base-300 w-96 shadow-sm">
   <figure>
