@@ -10,6 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("Kriti@123")
   const dispatch = useDispatch()
   const navigate = useNavigate();
+   const [error, setError] = useState("");
 
   const handleLogin = async () => {
 
@@ -22,8 +23,9 @@ const Login = () => {
           //console.log(res.data);
           dispatch(addUser(res.data))  // dispatching the user data to the redux store , user data is stored in store  
          return navigate("/")  // navigate to home page after successful login
-    } catch (error) {
-      console.error("Error logging in:", error)
+    } catch (err: any) {
+      setError(err?.response?.data || "Something went wrong");
+    
     }
   }
 
@@ -54,6 +56,7 @@ const Login = () => {
               </label>
                
                </div>
+               <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center my-2">
             <button className="btn btn-primary" onClick={handleLogin}>
               Login
