@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addConnections } from "../utils/connectionsSlice";
 import type { RootState } from "../utils/appStore"
+import { Link } from "react-router";
 
 const Connections = () => {
  const connections = useSelector((store: RootState) => store.connections);
@@ -50,13 +51,15 @@ const Connections = () => {
                 src={photoUrl}/>
             </div>
            
-            <div className="text-left mx-4">
+            <div className="text-left mx-4 flex-1">
                 <h2 className="font-bold text-xl">
                 {firstName + " " + lastName}
               </h2>
                {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
+              
              </div>
+             <Link to ={"/chat/" + _id}><button className="btn btn-primary" >Chat</button> </Link>
                 </div>
                 
             

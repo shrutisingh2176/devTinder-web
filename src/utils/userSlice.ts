@@ -7,6 +7,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
   lastName: string;
   email: string;
   photoUrl: string;
+  _id: string;
 };
 
 const initialState = null as User | null;
